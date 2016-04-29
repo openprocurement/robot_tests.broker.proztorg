@@ -78,7 +78,9 @@ Login
   ${title}=         Get From Dictionary   ${tender_data.data}               title
   ${description}=   Get From Dictionary   ${tender_data.data}               description
   ${budget}=        Get From Dictionary   ${tender_data.data.value}         amount
+  ${budget}=        Convert To String  ${budget}
   ${step_rate}=     Get From Dictionary   ${tender_data.data.minimalStep}   amount
+  ${step_rate}=     Convert To String  ${step_rate}
   ${items_description}=   Get From Dictionary   ${items[0]}         description
   ${quantity}=      Get From Dictionary   ${items[0]}                        quantity
   ${cpv}=           Get From Dictionary   ${items[0].classification}         id
