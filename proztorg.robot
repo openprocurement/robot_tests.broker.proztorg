@@ -162,14 +162,14 @@ Login
   Select From List By Label          xpath=(//*[@data-type='item'])[last()]//select[contains(@id, '_op_unit_id')]  ${unit}
   
 #  Sleep  2
-  Click Element                      xpath=(//*[@data-type='item'])[last()]//button[contains(., 'CPV')]
-  Wait Until Element Is Visible      xpath=(//*[@data-type='item'])[last()]//h4[contains(., 'CPV')]
+  Click Element                      xpath=(//*[@data-type='item'])[last()]//button[.='Класифікація ДК 021:2015']
+  Wait Until Element Is Visible      xpath=(//*[@data-type='item'])[last()]//h4[.='Класифікація ДК 021:2015']
   Sleep  1
-  Input text                         xpath=(//*[@data-type='item'])[last()]//*[@role='document'][contains(.//h4, 'CPV')]//input[@id='search-input']  ${cpv_id}
-  Press key                          xpath=(//*[@data-type='item'])[last()]//*[@role='document'][contains(.//h4, 'CPV')]//input[@id='search-input']  \\13
+  Input text                         xpath=(//*[@data-type='item'])[last()]//*[@role='document'][//h4/text()='Класифікація ДК 021:2015']//input[@id='search-input']  ${cpv_id}
+  Press key                          xpath=(//*[@data-type='item'])[last()]//*[@role='document'][//h4/text()='Класифікація ДК 021:2015']//input[@id='search-input']  \\13
   Wait Until Page Contains Element   xpath=(//*[@data-type='item'])[last()]//span[contains(span/b, '${cpv_id}')]  10
   Click Element                      xpath=(//*[@data-type='item'])[last()]//span[span/b/text()='${cpv_id}']/span[@class='fancytree-checkbox']
-  Click Element                      xpath=(//*[@data-type='item'])[last()]//*[@role='document'][contains(.//h4, 'CPV')]//button[contains(@class, 'js-submit-btn')]
+  Click Element                      xpath=(//*[@data-type='item'])[last()]//*[@role='document'][//h4/text()='Класифікація ДК 021:2015']//button[contains(@class, 'js-submit-btn')]
   Sleep  1
   
   Click Element                      xpath=(//*[@data-type='item'])[last()]//button[contains(., 'ДКПП')]
